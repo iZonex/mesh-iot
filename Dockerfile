@@ -24,8 +24,7 @@ RUN set -x \
 # install yocto dependencys
 RUN set -x \
     && apt-get update \
-    && apt-get -y upgrade \
-    && apt-get install -y \
+    && apt-get install -y --no-install-recommends\
     gawk \
     wget \
     git-core \
@@ -53,7 +52,7 @@ RUN set -x \
     locales
 
 # Add "repo" tool (used by many Yocto-based projects)
-RUN curl http://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
+RUN wget http://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
 RUN chmod a+x /usr/local/bin/repo
 
 # Fix error "Please use a locale setting which supports utf-8."
