@@ -49,7 +49,9 @@ RUN set -x \
     parted \
     syslinux \
     tree \
-    locales
+    locales \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # Add "repo" tool (used by many Yocto-based projects)
 RUN wget http://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
