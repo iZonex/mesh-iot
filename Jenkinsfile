@@ -20,7 +20,7 @@ node('master') {
     stage('Build project') {
         def dockerImage = docker.image("mesh-iot/yocto:${env.BUILD_ID}")
         dockerImage.inside {
-            sh 'ls -lah'
+            sh 'cd /poky && ls -lah'
         }
     }
     // stage('Build Production') {
