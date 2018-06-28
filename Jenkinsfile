@@ -20,7 +20,7 @@ node('master') {
     stage('Build project') {
         def dockerImage = docker.image("mesh-iot/yocto:${env.BUILD_ID}")
         dockerImage.inside {
-            sh 'cd poky && /bin/bash -c "source /ics-xen/init-build-env-gl build && bitbake ics-image-minimal"'
+            sh 'cd poky && /bin/bash -c "source /ics-xen/init-build-env build && bitbake meshiot"'
         }
     }
     // stage('Build Production') {
