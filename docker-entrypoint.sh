@@ -1,4 +1,4 @@
-#!/usr/bash
+#!/usr/bin/env bash
 set -ex
 
 # this if will check if the first argument is a flag
