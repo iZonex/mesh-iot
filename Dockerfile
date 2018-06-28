@@ -26,7 +26,7 @@ RUN set -x \
 # install yocto dependencys
 RUN set -x \
     && apt-get update \
-    && apt-get install -y --no-install-recommends\
+    && apt-get install -y \
     gawk \
     wget \
     git-core \
@@ -52,6 +52,7 @@ RUN set -x \
     syslinux \
     tree \
     locales \
+    sudo \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
