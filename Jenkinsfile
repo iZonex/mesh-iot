@@ -11,6 +11,8 @@ node('master') {
     stage('Clone project') {
         def dockerImage = docker.image("mesh-iot/yocto:${env.BUILD_ID}")
         dockerImage.inside {
+            sh 'git config --global user.email jenkins@jenkins.local'
+            sh 'git config --global user.name jenkins'
             sh 'repo init -u https://github.com/iZonex/mesh-iot-manifest.git'
             sh 'repo sync'
         }
