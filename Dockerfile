@@ -56,7 +56,7 @@ RUN set -x \
     && rm -rf /var/lib/apt/lists/*
 
 # Add "repo" tool (used by many Yocto-based projects)
-RUN wget http://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
+RUN curl http://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
 RUN chmod a+x /usr/local/bin/repo
 
 # Fix error "Please use a locale setting which supports utf-8."
